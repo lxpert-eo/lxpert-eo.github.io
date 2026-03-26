@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Grundlagen — Fachinformatiker</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <span class="header-tag">Lernmaterial</span>
+  <h1>HTML <span class="hl">Grundlagen</span></h1>
+  <p>Alles, was du für den Einstieg in die Webentwicklung brauchst.</p>
+</header>
+<div class="layout">
+<nav class="sidebar">
+  <div class="sidebar-label">Kapitel</div>
+  <button class="nav-btn active" data-tab="intro"><span class="nav-num">01</span>Was ist HTML?</button>
+  <button class="nav-btn" data-tab="grundgeruest"><span class="nav-num">02</span>Grundgerüst</button>
+  <button class="nav-btn" data-tab="text"><span class="nav-num">03</span>Text und Überschriften</button>
+  <button class="nav-btn" data-tab="listen"><span class="nav-num">04</span>Listen</button>
+  <button class="nav-btn" data-tab="links"><span class="nav-num">05</span>Links und Bilder</button>
+  <button class="nav-btn" data-tab="tabellen"><span class="nav-num">06</span>Tabellen</button>
+  <button class="nav-btn" data-tab="formulare"><span class="nav-num">07</span>Formulare</button>
+  <button class="nav-btn" data-tab="semantik"><span class="nav-num">08</span>Semantisches HTML</button>
+  <button class="nav-btn" data-tab="attribute"><span class="nav-num">09</span>Attribute und IDs</button>
+  <button class="nav-btn" data-tab="ux"><span class="nav-num">10</span>UX und Architektur</button>
+  <button class="nav-btn" data-tab="projekt"><span class="nav-num">11</span>Abschlussaufgabe</button>
+</nav>
+<main class="content-area">
+
+<!-- 01 -->
+<section class="tab-content active" id="tab-intro">
+  <h2 class="section-title">Was ist HTML?</h2>
+  <p class="section-subtitle">Die Sprache, aus der jede Webseite besteht</p>
+  <div class="slide"><div class="slide-label">Kernaussage</div><h4>HTML in einem Satz</h4><p>HTML steht für <strong>HyperText Markup Language</strong>. Es ist die Sprache, mit der wir dem Browser sagen, welche Inhalte auf einer Webseite stehen und wie sie strukturiert sind.</p><p style="margin-top:0.8rem;">HTML ist keine Programmiersprache. Es ist eine Auszeichnungssprache: Wir beschreiben Inhalte, statt Logik zu programmieren.</p></div>
+
+  <h3>Das Prinzip: Tags</h3>
+  <p>Tags sind Beschriftungen: „Das ist eine Überschrift", „Das ist ein Absatz". Die meisten kommen als Paar.</p>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;p&gt;</span>Das ist ein Absatz.<span class="tag">&lt;/p&gt;</span></div><div class="preview-result"><p>Das ist ein Absatz.</p></div></div></div>
+
+  <h3>Verschachtelung</h3>
+  <p>Tags stecken ineinander. Was zuerst geöffnet wird, wird zuletzt geschlossen.</p>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;p&gt;</span>Das ist <span class="tag">&lt;strong&gt;</span>wichtig<span class="tag">&lt;/strong&gt;</span>.<span class="tag">&lt;/p&gt;</span></div><div class="preview-result"><p>Das ist <strong>wichtig</strong>.</p></div></div></div>
+
+  <h3>Kommentare</h3>
+  <p>Notizen im Code, die der Browser ignoriert:</p>
+  <pre><code><span class="comment">&lt;!-- Das sieht der Besucher nicht --&gt;</span></code></pre>
+
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">&lt;tag&gt;</span><span class="sep">—</span><span class="desc">Öffnender Tag</span></div><div class="summary-row"><span class="key">&lt;/tag&gt;</span><span class="sep">—</span><span class="desc">Schließender Tag</span></div><div class="summary-row"><span class="key">&lt;br&gt;</span><span class="sep">—</span><span class="desc">Selbstschließend</span></div><div class="summary-row"><span class="key">&lt;!-- --&gt;</span><span class="sep">—</span><span class="desc">Kommentar</span></div><div class="summary-note">Was zuerst geöffnet wird, wird zuletzt geschlossen.</div></div>
+
+  <div class="note tip"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div class="note-content"><strong>Merke</strong>HTML = Struktur. CSS = Aussehen. JavaScript = Logik.</div></div>
+
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Was bedeutet HTML?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">HTML steht für HyperText Markup Language. Es ist eine Auszeichnungssprache, mit der man die Struktur von Webseiten beschreibt.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Welcher Ausdruck ist korrekt? <code>[p]Text[/p]</code> · <code>&lt;p&gt;Text&lt;/p&gt;</code> · <code>{p}Text{/p}</code></span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><code>&lt;p&gt;Text&lt;/p&gt;</code> ist korrekt. HTML Tags benutzen immer spitze Klammern <code>&lt; &gt;</code>, keine eckigen oder geschweiften.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">Warum ist HTML keine Programmiersprache?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Weil man mit HTML keine Logik schreibt (keine Schleifen, keine Bedingungen). Man beschreibt nur, welche Inhalte auf der Seite stehen und wie sie aufgebaut sind.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">d</span><span class="task-text">Was ist falsch? <code>&lt;p&gt;&lt;strong&gt;fett&lt;/p&gt;&lt;/strong&gt;</code></span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Die Verschachtelung stimmt nicht. <code>&lt;strong&gt;</code> wird vor <code>&lt;p&gt;</code> geschlossen, obwohl es danach geöffnet wurde. Richtig: <code>&lt;p&gt;&lt;strong&gt;fett&lt;/strong&gt;&lt;/p&gt;</code></div></details></div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="tab-content" id="tab-grundgeruest">
+  <h2 class="section-title">Das HTML Grundgerüst</h2>
+  <p class="section-subtitle">Jede Webseite startet mit dieser Struktur</p>
+  <div class="slide"><div class="slide-label">Folie</div><h4>Das Grundgerüst</h4><div class="big-code">&lt;!DOCTYPE html&gt;<br>&lt;html lang="de"&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content="width=device-width,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initial-scale=1.0"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Meine Seite&lt;/title&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Sichtbarer Inhalt --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</div></div>
+  <h3>Was macht was?</h3>
+  <div class="card"><div class="card-title"><code>&lt;!DOCTYPE html&gt;</code></div><p>HTML5 Dokument. Steht immer oben.</p></div>
+  <div class="card"><div class="card-title"><code>&lt;html lang="de"&gt;</code></div><p>Äußerstes Element. <code>lang="de"</code> = Deutsch.</p></div>
+  <div class="card"><div class="card-title"><code>&lt;head&gt;</code></div><p>Unsichtbar. Titel, Zeichenkodierung, Viewport, CSS.</p></div>
+  <div class="card"><div class="card-title"><code>&lt;body&gt;</code></div><p>Alles Sichtbare: Texte, Bilder, Links.</p></div>
+  <div class="note info"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div class="note-content"><strong>Viewport</strong>Sorgt für richtige Skalierung auf Handys. Immer angeben.</div></div>
+  <h3>Einrückung</h3>
+  <p>Innere Elemente einrücken (2 Leerzeichen oder Tab). Hält Code lesbar.</p>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">DOCTYPE</span><span class="sep">—</span><span class="desc">HTML5</span></div><div class="summary-row"><span class="key">&lt;html&gt;</span><span class="sep">—</span><span class="desc">Wurzelelement</span></div><div class="summary-row"><span class="key">&lt;head&gt;</span><span class="sep">—</span><span class="desc">Metadaten</span></div><div class="summary-row"><span class="key">&lt;body&gt;</span><span class="sep">—</span><span class="desc">Sichtbarer Inhalt</span></div><div class="summary-note">Immer UTF-8 und Viewport angeben.</div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Grundgerüst abschreiben, als <code>index.html</code> speichern, im Browser öffnen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Die Datei muss mit <code>&lt;!DOCTYPE html&gt;</code> beginnen, dann <code>&lt;html&gt;</code>, darin <code>&lt;head&gt;</code> mit charset und title, und <code>&lt;body&gt;</code>. Wenn du die Datei im Browser öffnest, siehst du eine leere Seite mit dem Titel im Tab.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text"><code>&lt;title&gt;</code> ändern. Was passiert im Tab?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Der Text im Browser Tab ändert sich. Der Title Tag bestimmt, was oben im Tab steht, nicht auf der Seite selbst.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text"><code>&lt;p&gt;Hallo Welt!&lt;/p&gt;</code> in den Body, neu laden.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">„Hallo Welt!" erscheint auf der Seite. Alles im <code>&lt;body&gt;</code> wird sichtbar angezeigt.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">d</span><span class="task-text"><code>charset="UTF-8"</code> entfernen, „Über uns" schreiben. Was passiert?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Das Ü wird möglicherweise als seltsames Zeichen angezeigt (z.B. Ã¼). Ohne UTF-8 weiß der Browser nicht, wie er Umlaute darstellen soll.</div></details></div>
+  </div>
+</section>
+<!-- 03 -->
+<section class="tab-content" id="tab-text">
+  <h2 class="section-title">Text und Überschriften</h2>
+  <p class="section-subtitle">Texte, Absätze und Überschriften richtig einsetzen</p>
+  <h3>Überschriften: h1 bis h6</h3>
+  <p><code>&lt;h1&gt;</code> = wichtigste, <code>&lt;h6&gt;</code> = kleinste. h1 = Titel, h2 = Kapitel, h3 = Unterkapitel.</p>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;h1&gt;</span>Hauptüberschrift<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Kapitel<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;h3&gt;</span>Unterkapitel<span class="tag">&lt;/h3&gt;</span>
+<span class="tag">&lt;p&gt;</span>Normaler Text.<span class="tag">&lt;/p&gt;</span></div><div class="preview-result"><h1>Hauptüberschrift</h1><h2>Kapitel</h2><h3>Unterkapitel</h3><p>Normaler Text.</p></div></div></div>
+  <div class="note warn"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg><div class="note-content"><strong>Wichtig</strong>Überschriften nicht wegen der Größe wählen! Die Größe ändert man mit CSS.</div></div>
+  <h3>Textformatierung</h3>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;p&gt;</span>Ein <span class="tag">&lt;strong&gt;</span>wichtiges<span class="tag">&lt;/strong&gt;</span>
+und <span class="tag">&lt;em&gt;</span>betontes<span class="tag">&lt;/em&gt;</span> Wort.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;hr&gt;</span>
+<span class="tag">&lt;p&gt;</span>Nach der Linie.<span class="tag">&lt;/p&gt;</span></div><div class="preview-result"><p>Ein <strong>wichtiges</strong> und <em>betontes</em> Wort.</p><hr><p>Nach der Linie.</p></div></div></div>
+  <h3>Block vs. Inline</h3>
+  <p><strong>Block</strong> = volle Breite, neue Zeile (<code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>). <strong>Inline</strong> = bleibt in der Zeile (<code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;a&gt;</code>).</p>
+  <h3>Sonderzeichen</h3>
+  <table><tr><th>Zeichen</th><th>HTML</th><th>Name</th></tr><tr><td>&lt;</td><td><code>&amp;lt;</code></td><td>Kleiner als</td></tr><tr><td>&gt;</td><td><code>&amp;gt;</code></td><td>Größer als</td></tr><tr><td>&amp;</td><td><code>&amp;amp;</code></td><td>Und</td></tr><tr><td>&copy;</td><td><code>&amp;copy;</code></td><td>Copyright</td></tr></table>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">&lt;p&gt;</span><span class="sep">—</span><span class="desc">Absatz</span></div><div class="summary-row"><span class="key">&lt;strong&gt; / &lt;em&gt;</span><span class="sep">—</span><span class="desc">Wichtig / Betont</span></div><div class="summary-row"><span class="key">&lt;br&gt; / &lt;hr&gt;</span><span class="sep">—</span><span class="desc">Umbruch / Linie</span></div><div class="summary-row"><span class="key">&lt;h1&gt;–&lt;h6&gt;</span><span class="sep">—</span><span class="desc">Überschriften</span></div><div class="summary-note">Block = volle Breite. Inline = in der Zeile.</div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Seite über dein Lieblingsessen: h1, h2, zwei Absätze.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;h1&gt;</span>Pizza<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Warum Pizza?<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;p&gt;</span>Pizza ist einfach das Beste.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>Am liebsten mit Salami.<span class="tag">&lt;/p&gt;</span></code></pre></div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Je ein Wort mit <code>&lt;strong&gt;</code> und <code>&lt;em&gt;</code>.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;p&gt;</span>Pizza ist <span class="tag">&lt;strong&gt;</span>einfach<span class="tag">&lt;/strong&gt;</span> das
+<span class="tag">&lt;em&gt;</span>Beste<span class="tag">&lt;/em&gt;</span>.<span class="tag">&lt;/p&gt;</span></code></pre></div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">In HTML: „Tags nutzen &lt; und &gt; Zeichen."</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;p&gt;</span>Tags nutzen &amp;lt; und &amp;gt; Zeichen.<span class="tag">&lt;/p&gt;</span></code></pre>Die spitzen Klammern müssen als <code>&amp;lt;</code> und <code>&amp;gt;</code> geschrieben werden, weil sie sonst als HTML Tags interpretiert werden.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">d</span><span class="task-text">Block vs. Inline: Was ist der Unterschied?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Block Elemente nehmen die gesamte Breite ein und starten immer in einer neuen Zeile (z.B. <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>). Inline Elemente nehmen nur den Platz ihres Inhalts ein und bleiben in der Zeile (z.B. <code>&lt;strong&gt;</code>, <code>&lt;a&gt;</code>).</div></details></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="tab-content" id="tab-listen">
+  <h2 class="section-title">Listen</h2>
+  <p class="section-subtitle">Dinge aufzählen, sortiert und unsortiert</p>
+  <h3>Unsortierte und sortierte Listen</h3>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Äpfel<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Bananen<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+
+<span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Wasser kochen<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Teebeutel rein<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Warten<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></div><div class="preview-result"><ul><li>Äpfel</li><li>Bananen</li></ul><ol><li>Wasser kochen</li><li>Teebeutel rein</li><li>Warten</li></ol></div></div></div>
+
+  <h3>Beschreibungsliste</h3>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;dl&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>HTML<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>HyperText Markup Language<span class="tag">&lt;/dd&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>CSS<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>Cascading Style Sheets<span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span></div><div class="preview-result"><dl><dt><strong>HTML</strong></dt><dd>HyperText Markup Language</dd><dt><strong>CSS</strong></dt><dd>Cascading Style Sheets</dd></dl></div></div></div>
+
+  <h3>Verschachtelte Listen</h3>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Obst
+    <span class="tag">&lt;ul&gt;</span>
+      <span class="tag">&lt;li&gt;</span>Äpfel<span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;li&gt;</span>Birnen<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+  <span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Gemüse<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></div><div class="preview-result"><ul><li>Obst<ul><li>Äpfel</li><li>Birnen</li></ul></li><li>Gemüse</li></ul></div></div></div>
+
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">&lt;ul&gt;</span><span class="sep">—</span><span class="desc">Unsortiert</span></div><div class="summary-row"><span class="key">&lt;ol&gt;</span><span class="sep">—</span><span class="desc">Sortiert</span></div><div class="summary-row"><span class="key">&lt;li&gt;</span><span class="sep">—</span><span class="desc">Listenpunkt</span></div><div class="summary-row"><span class="key">&lt;dl&gt; / &lt;dt&gt; / &lt;dd&gt;</span><span class="sep">—</span><span class="desc">Beschreibungsliste</span></div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Unsortiert: 5 Dinge für eine einsame Insel.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Messer<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Feuerzeug<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Zelt<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Wasserflasche<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Seil<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></code></pre></div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Sortiert: Schritte zum Spiegelei braten.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Pfanne auf den Herd<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Öl rein<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Ei aufschlagen<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Braten bis fest<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></code></pre>Hier ist <code>&lt;ol&gt;</code> richtig, weil die Reihenfolge wichtig ist.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">Verschachtelt: „Filme" und „Serien" mit je zwei Titeln.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Filme
+    <span class="tag">&lt;ul&gt;</span>
+      <span class="tag">&lt;li&gt;</span>Inception<span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;li&gt;</span>Matrix<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+  <span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Serien
+    <span class="tag">&lt;ul&gt;</span>
+      <span class="tag">&lt;li&gt;</span>Breaking Bad<span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;li&gt;</span>Dark<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+  <span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></code></pre>Die innere <code>&lt;ul&gt;</code> steckt im <code>&lt;li&gt;</code> des Elternelements.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">d</span><span class="task-text">Beschreibungsliste mit drei IT Begriffen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;dl&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>RAM<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>Arbeitsspeicher<span class="tag">&lt;/dd&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>CPU<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>Prozessor<span class="tag">&lt;/dd&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>SSD<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>Schnelle Festplatte<span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span></code></pre></div></details></div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="tab-content" id="tab-links">
+  <h2 class="section-title">Links und Bilder</h2>
+  <p class="section-subtitle">Seiten verknüpfen und Bilder einbinden</p>
+  <h3>Links</h3>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://example.com"</span><span class="tag">&gt;</span>
+  Normaler Link<span class="tag">&lt;/a&gt;</span>
+
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="751c1b131a35011006015b1110">[email&#160;protected]</a>"</span><span class="tag">&gt;</span>
+  E-Mail senden<span class="tag">&lt;/a&gt;</span></div><div class="preview-result"><a href="https://example.com">Normaler Link</a><br><a href="/cdn-cgi/l/email-protection#abc2c5cdc4ebdfced8df85cfce">E-Mail senden</a></div></div></div>
+  <h3>Bilder</h3>
+  <pre><code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"foto.jpg"</span> <span class="attr">alt</span>=<span class="val">"Beschreibung"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Bild als Link --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://example.com"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"logo.png"</span> <span class="attr">alt</span>=<span class="val">"Logo"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/a&gt;</span></code></pre>
+  <div class="note warn"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg><div class="note-content"><strong>Alt Text ist Pflicht</strong>Beschreibt das Bild. Wird angezeigt wenn es nicht lädt. Von Screenreadern vorgelesen.</div></div>
+  <h3>Dateipfade</h3>
+  <table><tr><th>Pfad</th><th>Bedeutung</th></tr><tr><td><code>bild.jpg</code></td><td>Gleicher Ordner</td></tr><tr><td><code>bilder/bild.jpg</code></td><td>Unterordner</td></tr><tr><td><code>../bild.jpg</code></td><td>Ordner höher</td></tr><tr><td><code>https://...</code></td><td>Absolute URL</td></tr></table>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">&lt;a href="..."&gt;</span><span class="sep">—</span><span class="desc">Link</span></div><div class="summary-row"><span class="key">&lt;img src="..." alt="..."&gt;</span><span class="sep">—</span><span class="desc">Bild</span></div><div class="summary-row"><span class="key">target="_blank"</span><span class="sep">—</span><span class="desc">Neuer Tab</span></div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Drei Links (Google, Wikipedia, freie Wahl). Einer in neuem Tab.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://google.com"</span><span class="tag">&gt;</span>Google<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://wikipedia.org"</span> <span class="attr">target</span>=<span class="val">"_blank"</span><span class="tag">&gt;</span>Wikipedia<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://youtube.com"</span><span class="tag">&gt;</span>YouTube<span class="tag">&lt;/a&gt;</span></code></pre><code>target="_blank"</code> öffnet den Link in einem neuen Tab.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Bild einbinden. Alt Text nicht vergessen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"mein-bild.jpg"</span> <span class="attr">alt</span>=<span class="val">"Ein Sonnenuntergang am Meer"</span><span class="tag">&gt;</span></code></pre>Das Bild muss im gleichen Ordner wie die HTML Datei liegen.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">Bild klickbar machen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://example.com"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"bild.jpg"</span> <span class="attr">alt</span>=<span class="val">"Klickbares Bild"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/a&gt;</span></code></pre>Den <code>&lt;img&gt;</code> Tag einfach in einen <code>&lt;a&gt;</code> Tag packen.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">d</span><span class="task-text">E-Mail Link und Ankerlink erstellen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"mailto:<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="244d4a424b64424d5649450a4041">[email&#160;protected]</a>"</span><span class="tag">&gt;</span>Mail<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#kontakt"</span><span class="tag">&gt;</span>Zum Kontakt<span class="tag">&lt;/a&gt;</span></code></pre><code>mailto:</code> öffnet das E-Mail Programm. <code>#kontakt</code> springt zu einem Element mit <code>id="kontakt"</code>.</div></details></div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="tab-content" id="tab-tabellen">
+  <h2 class="section-title">Tabellen</h2>
+  <p class="section-subtitle">Daten in Zeilen und Spalten</p>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;table&gt;</span>
+ <span class="tag">&lt;thead&gt;</span>
+  <span class="tag">&lt;tr&gt;</span>
+   <span class="tag">&lt;th&gt;</span>Name<span class="tag">&lt;/th&gt;</span>
+   <span class="tag">&lt;th&gt;</span>Alter<span class="tag">&lt;/th&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+ <span class="tag">&lt;/thead&gt;</span>
+ <span class="tag">&lt;tbody&gt;</span>
+  <span class="tag">&lt;tr&gt;</span>
+   <span class="tag">&lt;td&gt;</span>Anna<span class="tag">&lt;/td&gt;</span>
+   <span class="tag">&lt;td&gt;</span>22<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;tr&gt;</span>
+   <span class="tag">&lt;td&gt;</span>Max<span class="tag">&lt;/td&gt;</span>
+   <span class="tag">&lt;td&gt;</span>25<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+ <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></div><div class="preview-result"><table><thead><tr><th>Name</th><th>Alter</th></tr></thead><tbody><tr><td>Anna</td><td>22</td></tr><tr><td>Max</td><td>25</td></tr></tbody></table></div></div></div>
+  <h3>Zellen verbinden</h3>
+  <pre><code><span class="tag">&lt;td</span> <span class="attr">colspan</span>=<span class="val">"2"</span><span class="tag">&gt;</span>Über 2 Spalten<span class="tag">&lt;/td&gt;</span>
+<span class="tag">&lt;td</span> <span class="attr">rowspan</span>=<span class="val">"3"</span><span class="tag">&gt;</span>Über 3 Zeilen<span class="tag">&lt;/td&gt;</span></code></pre>
+  <div class="note tip"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div class="note-content"><strong>Nur für Daten</strong>Tabellen nicht für Layouts. Dafür gibt es CSS.</div></div>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">&lt;table&gt;</span><span class="sep">—</span><span class="desc">Tabelle</span></div><div class="summary-row"><span class="key">&lt;thead&gt; / &lt;tbody&gt;</span><span class="sep">—</span><span class="desc">Kopf / Körper</span></div><div class="summary-row"><span class="key">&lt;tr&gt;</span><span class="sep">—</span><span class="desc">Zeile</span></div><div class="summary-row"><span class="key">&lt;th&gt; / &lt;td&gt;</span><span class="sep">—</span><span class="desc">Kopf / Daten</span></div><div class="summary-row"><span class="key">colspan / rowspan</span><span class="sep">—</span><span class="desc">Verbinden</span></div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Stundenplan: Uhrzeit, Fach, Raum.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;table&gt;</span>
+  <span class="tag">&lt;thead&gt;</span><span class="tag">&lt;tr&gt;</span><span class="tag">&lt;th&gt;</span>Uhrzeit<span class="tag">&lt;/th&gt;</span><span class="tag">&lt;th&gt;</span>Fach<span class="tag">&lt;/th&gt;</span><span class="tag">&lt;th&gt;</span>Raum<span class="tag">&lt;/th&gt;</span><span class="tag">&lt;/tr&gt;</span><span class="tag">&lt;/thead&gt;</span>
+  <span class="tag">&lt;tbody&gt;</span>
+    <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;td&gt;</span>8:00<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;td&gt;</span>Mathe<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;td&gt;</span>A12<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;td&gt;</span>9:30<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;td&gt;</span>IT<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;td&gt;</span>B03<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></code></pre></div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Top 5: Platz, Titel, Bewertung.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Gleicher Aufbau wie oben, nur mit anderen Spalten. <code>&lt;th&gt;</code> für Platz, Titel, Bewertung. Dann <code>&lt;td&gt;</code> Zeilen mit 1, Inception, ★★★★★ usw.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">Kopfzelle mit <code>colspan="3"</code>.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;tr&gt;</span>
+  <span class="tag">&lt;th</span> <span class="attr">colspan</span>=<span class="val">"3"</span><span class="tag">&gt;</span>Mein Stundenplan<span class="tag">&lt;/th&gt;</span>
+<span class="tag">&lt;/tr&gt;</span></code></pre>Die Zelle erstreckt sich über alle drei Spalten.</div></details></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="tab-content" id="tab-formulare">
+  <h2 class="section-title">Formulare</h2>
+  <p class="section-subtitle">Eingabefelder, Buttons und Auswahlelemente</p>
+  <h3>Eingabefelder</h3>
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"n"</span><span class="tag">&gt;</span>Name:<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"n"</span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;select&gt;</span>
+  <span class="tag">&lt;option&gt;</span>Rot<span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;option&gt;</span>Blau<span class="tag">&lt;/option&gt;</span>
+<span class="tag">&lt;/select&gt;</span>
+
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"checkbox"</span> <span class="attr">id</span>=<span class="val">"c"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"c"</span><span class="tag">&gt;</span>AGB<span class="tag">&lt;/label&gt;</span>
+
+<span class="tag">&lt;button&gt;</span>Absenden<span class="tag">&lt;/button&gt;</span></div><div class="preview-result"><label for="pn">Name:</label><br><input type="text" id="pn" placeholder="Max Mustermann"><br><br><select><option>Rot</option><option>Blau</option></select><br><br><input type="checkbox" id="pc"><label for="pc"> AGB</label><br><br><button type="button">Absenden</button></div></div></div>
+  <div class="note info"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div class="note-content"><strong>Labels und Radio</strong>Labels verbinden Text mit Feld (<code>for</code> = <code>id</code>). Radio mit gleichem <code>name</code> = nur einer wählbar.</div></div>
+  <h3>Weitere Typen</h3>
+  <pre><code><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"password"</span><span class="tag">&gt;</span>  <span class="comment">&lt;!-- verdeckt --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"number"</span><span class="tag">&gt;</span>    <span class="comment">&lt;!-- Zahlen --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"date"</span><span class="tag">&gt;</span>      <span class="comment">&lt;!-- Datum --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"radio"</span> <span class="attr">name</span>=<span class="val">"x"</span><span class="tag">&gt;</span> A
+<span class="tag">&lt;textarea</span> <span class="attr">rows</span>=<span class="val">"4"</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">required</span><span class="tag">&gt;</span>        <span class="comment">&lt;!-- Pflicht --&gt;</span></code></pre>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">text / email / password</span><span class="sep">—</span><span class="desc">Textfelder</span></div><div class="summary-row"><span class="key">number / date</span><span class="sep">—</span><span class="desc">Zahl / Datum</span></div><div class="summary-row"><span class="key">checkbox / radio</span><span class="sep">—</span><span class="desc">Mehrfach / Einfach</span></div><div class="summary-row"><span class="key">required</span><span class="sep">—</span><span class="desc">Pflichtfeld</span></div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Kontaktformular: Name, E-Mail, Dropdown, Nachricht, Button.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"fn"</span><span class="tag">&gt;</span>Name:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">id</span>=<span class="val">"fn"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"fe"</span><span class="tag">&gt;</span>E-Mail:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"email"</span> <span class="attr">id</span>=<span class="val">"fe"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;select&gt;</span>
+    <span class="tag">&lt;option&gt;</span>Frage<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;option&gt;</span>Feedback<span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;/select&gt;</span>
+  <span class="tag">&lt;textarea</span> <span class="attr">rows</span>=<span class="val">"4"</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+  <span class="tag">&lt;button&gt;</span>Absenden<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></code></pre></div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Umfrage mit Radio: „Lieblings OS?"</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"radio"</span> <span class="attr">name</span>=<span class="val">"os"</span> <span class="attr">id</span>=<span class="val">"w"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"w"</span><span class="tag">&gt;</span>Windows<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"radio"</span> <span class="attr">name</span>=<span class="val">"os"</span> <span class="attr">id</span>=<span class="val">"m"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"m"</span><span class="tag">&gt;</span>macOS<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"radio"</span> <span class="attr">name</span>=<span class="val">"os"</span> <span class="attr">id</span>=<span class="val">"l"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"l"</span><span class="tag">&gt;</span>Linux<span class="tag">&lt;/label&gt;</span></code></pre>Alle drei haben <code>name="os"</code>, deshalb kann man nur eins wählen.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text"><code>required</code> testen. Was passiert ohne Eingabe?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Der Browser zeigt eine Fehlermeldung wie „Bitte füllen Sie dieses Feld aus" und das Formular wird nicht abgeschickt. <code>required</code> macht ein Feld zum Pflichtfeld.</div></details></div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="tab-content" id="tab-semantik">
+  <h2 class="section-title">Semantisches HTML</h2>
+  <p class="section-subtitle">Tags mit Bedeutung statt leere Hüllen</p>
+  <div class="slide"><div class="slide-label">Folie</div><h4>Div vs. Semantik</h4><p>Alles mit <code>&lt;div&gt;</code> geht, aber niemand versteht die Struktur. Besser: Tags die beschreiben, was sie enthalten.</p></div>
+  <h3>Semantische Tags</h3>
+  <pre><code><span class="tag">&lt;header&gt;</span>      Kopfbereich
+<span class="tag">&lt;nav&gt;</span>         Navigation
+<span class="tag">&lt;main&gt;</span>        Hauptinhalt (1x)
+<span class="tag">&lt;article&gt;</span>     Eigenständig
+<span class="tag">&lt;section&gt;</span>     Abschnitt
+<span class="tag">&lt;aside&gt;</span>       Seitenleiste
+<span class="tag">&lt;footer&gt;</span>      Fußbereich
+<span class="tag">&lt;figure&gt;</span>      Bild + Beschriftung
+<span class="tag">&lt;time&gt;</span>        Datum</code></pre>
+  <h3>Beispiel</h3>
+  <pre><code><span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Blog<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;nav&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"/"</span><span class="tag">&gt;</span>Start<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/nav&gt;</span>
+  <span class="tag">&lt;/header&gt;</span>
+  <span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;article&gt;</span>
+      <span class="tag">&lt;h2&gt;</span>Beitrag<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;p&gt;</span>Text...<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/article&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;footer&gt;</span>&amp;copy; 2025<span class="tag">&lt;/footer&gt;</span>
+<span class="tag">&lt;/body&gt;</span></code></pre>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div><div class="summary-row"><span class="key">&lt;header&gt; / &lt;footer&gt;</span><span class="sep">—</span><span class="desc">Kopf / Fuß</span></div><div class="summary-row"><span class="key">&lt;nav&gt; / &lt;main&gt;</span><span class="sep">—</span><span class="desc">Navigation / Hauptinhalt</span></div><div class="summary-row"><span class="key">&lt;article&gt; / &lt;section&gt;</span><span class="sep">—</span><span class="desc">Eigenständig / Abschnitt</span></div><div class="summary-row"><span class="key">&lt;div&gt; / &lt;span&gt;</span><span class="sep">—</span><span class="desc">Ohne Bedeutung</span></div><div class="summary-note">Hilft Suchmaschinen, Screenreadern und Entwicklern.</div></div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Seite umbauen: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Statt alles direkt in <code>&lt;body&gt;</code> zu schreiben, packst du den Kopf in <code>&lt;header&gt;</code>, den Haupttext in <code>&lt;main&gt;</code> und unten ein Copyright in <code>&lt;footer&gt;</code>. Das ändert nichts am Aussehen, aber der Code hat eine klare Bedeutung.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Unterschied <code>&lt;div&gt;</code> vs. <code>&lt;section&gt;</code>?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><code>&lt;div&gt;</code> ist ein leerer Container ohne Bedeutung. <code>&lt;section&gt;</code> sagt: „Hier beginnt ein neuer thematischer Abschnitt." Suchmaschinen und Screenreader verstehen den Unterschied.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">F12 auf einer Webseite: Welche semantischen Tags?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Auf den meisten Webseiten findest du mindestens <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code> und <code>&lt;footer&gt;</code>. Manche nutzen auch <code>&lt;article&gt;</code> für Beiträge und <code>&lt;aside&gt;</code> für Seitenleisten.</div></details></div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="tab-content" id="tab-attribute">
+  <h2 class="section-title">Attribute und IDs</h2>
+  <p class="section-subtitle">Wie du Tags mit Zusatzinfos ausstattest</p>
+
+  <h3>Was sind Attribute?</h3>
+  <p>Du kennst schon <code>href</code> bei Links und <code>src</code> bei Bildern. Das sind Attribute. Ein Attribut gibt einem Tag eine zusätzliche Information mit. Es steht immer im öffnenden Tag und hat die Form <code>name="wert"</code>.</p>
+
+  <div class="preview"><div class="preview-header"><div class="preview-dots"><span></span><span></span><span></span></div><div class="preview-label"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12l5-5v3h9V7l5 5-5 5v-3H7v3z"/></svg>Live Vorschau</div></div><div class="preview-body"><div class="preview-code"><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://example.com"</span>
+   <span class="attr">target</span>=<span class="val">"_blank"</span>
+   <span class="attr">title</span>=<span class="val">"Öffnet extern"</span><span class="tag">&gt;</span>
+  Ein Link mit 3 Attributen
+<span class="tag">&lt;/a&gt;</span></div><div class="preview-result"><a href="https://example.com" target="_blank" title="Öffnet extern">Ein Link mit 3 Attributen</a><br><br><span style="font-size:12px;color:#86868b;">(Fahre mit der Maus über den Link)</span></div></div></div>
+
+  <h3>Welche Attribute gibt es?</h3>
+  <p>Manche Attribute gehören zu bestimmten Tags (wie <code>href</code> nur bei Links). Andere kannst du bei jedem Tag benutzen:</p>
+  <table><tr><th>Attribut</th><th>Was es macht</th><th>Beispiel</th></tr><tr><td><code>id</code></td><td>Gibt dem Element einen eigenen Namen</td><td><code>id="kontakt"</code></td></tr><tr><td><code>class</code></td><td>Ordnet das Element einer Gruppe zu</td><td><code>class="rot"</code></td></tr><tr><td><code>title</code></td><td>Zeigt einen kleinen Text beim Drüberfahren</td><td><code>title="Info"</code></td></tr><tr><td><code>style</code></td><td>Ändert das Aussehen direkt am Element</td><td><code>style="color:red"</code></td></tr><tr><td><code>hidden</code></td><td>Versteckt das Element</td><td><code>hidden</code></td></tr></table>
+
+  <h3>id: Einen Namen vergeben</h3>
+  <p>Mit <code>id</code> gibst du einem Element einen eindeutigen Namen. Dieser Name darf auf der ganzen Seite nur einmal vorkommen. Das ist wie die Hausnummer an einem Haus: Jedes Haus in der Straße hat eine andere Nummer, damit der Postbote weiß, wo er hin muss.</p>
+  <p>Du brauchst die id vor allem für Ankerlinks (damit der Browser weiß, wohin er springen soll) und später für CSS und JavaScript.</p>
+
+  <pre><code><span class="comment">&lt;!-- Der Link zeigt auf die id --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#kontakt"</span><span class="tag">&gt;</span>Zum Kontaktbereich<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Das Ziel hat die id --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"kontakt"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h2&gt;</span>Kontakt<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;/section&gt;</span></code></pre>
+
+  <h3>class: Elemente in Gruppen einteilen</h3>
+  <p>Mit <code>class</code> sagst du: „Diese Elemente gehören zusammen." Bleiben wir beim Straßen Beispiel: Die id ist die Hausnummer, die ist einzigartig. Die class ist der Straßenname. Alle Häuser in der gleichen Straße haben den gleichen Straßennamen, aber jedes Haus hat seine eigene Hausnummer. Und ein Haus kann sogar in zwei Straßen liegen (Eckhaus), also zwei Klassen haben.</p>
+  <p>Im Moment verändert eine class noch nichts am Aussehen. Erst wenn du später CSS lernst, kannst du sagen: „Alle Elemente in der Straße wichtig sollen rote Schrift bekommen."</p>
+
+  <pre><code><span class="comment">&lt;!-- Drei Absätze in der gleichen Gruppe --&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"wichtig"</span><span class="tag">&gt;</span>Erster wichtiger Text<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"wichtig"</span><span class="tag">&gt;</span>Zweiter wichtiger Text<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>Normaler Text ohne class<span class="tag">&lt;/p&gt;</span>
+
+<span class="comment">&lt;!-- Ein Element in zwei Gruppen gleichzeitig --&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"wichtig gross"</span><span class="tag">&gt;</span>Zwei Klassen<span class="tag">&lt;/p&gt;</span></code></pre>
+
+  <div class="card"><div class="card-title">id vs. class: Der Unterschied</div>
+  <p><code>id</code> = Hausnummer. Einzigartig, jedes Element bekommt höchstens eine, und sie kommt nur einmal auf der ganzen Seite vor.</p>
+  <p><code>class</code> = Straßenname. Viele Häuser können in der gleichen Straße liegen, und ein Eckhaus kann sogar in zwei Straßen liegen (also zwei Klassen haben).</p>
+  <p>Regeln für Namen: Keine Leerzeichen, keine Sonderzeichen, nicht mit einer Zahl anfangen. Gut: <code>mein-bereich</code>. Schlecht: <code>1bereich</code>.</p></div>
+
+  <h3>Boolean Attribute</h3>
+  <p>Manche Attribute brauchen keinen Wert. Wenn sie da stehen, sind sie an. Wenn sie fehlen, sind sie aus. Wie ein Lichtschalter.</p>
+  <pre><code><span class="tag">&lt;input</span> <span class="attr">required</span><span class="tag">&gt;</span>             <span class="comment">&lt;!-- Pflichtfeld --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">disabled</span><span class="tag">&gt;</span>             <span class="comment">&lt;!-- Nicht anklickbar --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"checkbox"</span> <span class="attr">checked</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Schon angehakt --&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">hidden</span><span class="tag">&gt;</span>Unsichtbar<span class="tag">&lt;/p&gt;</span>        <span class="comment">&lt;!-- Versteckt --&gt;</span></code></pre>
+
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Zusammenfassung</div>
+    <div class="summary-row"><span class="key">id</span><span class="sep">—</span><span class="desc">Hausnummer, nur 1x pro Seite</span></div>
+    <div class="summary-row"><span class="key">class</span><span class="sep">—</span><span class="desc">Straßenname, beliebig oft vergeben</span></div>
+    <div class="summary-row"><span class="key">title</span><span class="sep">—</span><span class="desc">Tooltip beim Drüberfahren</span></div>
+    <div class="summary-row"><span class="key">style</span><span class="sep">—</span><span class="desc">CSS direkt am Element</span></div>
+    <div class="summary-row"><span class="key">required, disabled, hidden</span><span class="sep">—</span><span class="desc">An/Aus Attribute (kein Wert nötig)</span></div>
+    <div class="summary-note">Attribute stehen immer im öffnenden Tag. Format: name="wert"</div></div>
+
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Erstelle drei Sections mit je einer id und oben eine Navigation mit Ankerlinks, die dorthin springen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;nav&gt;</span>
+  <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#eins"</span><span class="tag">&gt;</span>Eins<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#zwei"</span><span class="tag">&gt;</span>Zwei<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#drei"</span><span class="tag">&gt;</span>Drei<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;/nav&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"eins"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"zwei"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="val">"drei"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span></code></pre>Das <code>#</code> im Link verweist auf die id. Klickt man den Link, springt die Seite zu dem Element mit der passenden id.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Gib drei Absätzen die gleiche class <code>"info"</code>. Ändert sich was im Browser?</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"info"</span><span class="tag">&gt;</span>Erster<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"info"</span><span class="tag">&gt;</span>Zweiter<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"info"</span><span class="tag">&gt;</span>Dritter<span class="tag">&lt;/p&gt;</span></code></pre>Nein, im Browser ändert sich erstmal nichts. Eine class hat erst dann einen sichtbaren Effekt, wenn du sie in CSS mit einer Regel verknüpfst. Aber der Code ist vorbereitet.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">Füge einem Link ein <code>title</code> Attribut hinzu und fahre im Browser mit der Maus drüber.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://google.com"</span> <span class="attr">title</span>=<span class="val">"Öffnet Google"</span><span class="tag">&gt;</span>Google<span class="tag">&lt;/a&gt;</span></code></pre>Nach einer kurzen Verzögerung erscheint ein kleiner Tooltip mit dem Text „Öffnet Google".</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">d</span><span class="task-text">Erstelle eine Checkbox die schon angehakt ist und ein deaktiviertes Textfeld.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content"><pre><code><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"checkbox"</span> <span class="attr">checked</span><span class="tag">&gt;</span> Angehakt
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">value</span>=<span class="val">"Gesperrt"</span> <span class="attr">disabled</span><span class="tag">&gt;</span></code></pre><code>checked</code> und <code>disabled</code> brauchen keinen Wert. Sie sind entweder da (an) oder nicht (aus).</div></details></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="tab-content" id="tab-ux">
+  <h2 class="section-title">UX und Architektur</h2>
+  <p class="section-subtitle">Was gute Webseiten ausmacht</p>
+  <div class="slide"><div class="slide-label">Exkurs</div><h4>UX vs. UI</h4><ul><li><strong>UI</strong> = Aussehen (Buttons, Farben)</li><li><strong>UX</strong> = Erlebnis (Findbarkeit, Verständlichkeit)</li></ul><p style="margin-top:0.8rem;">Restaurant: UI = Einrichtung. UX = Wohlfühlen + schnelle Bedienung.</p></div>
+  <h3>Grundregeln</h3>
+  <div class="card"><div class="card-title">Klare Struktur</div><p>Header, Hauptinhalt, Footer. Besucher erwarten das.</p></div>
+  <div class="card"><div class="card-title">Navigation sofort klar</div><p>Immer sichtbar. 5 bis 7 Punkte.</p></div>
+  <div class="card"><div class="card-title">Das Wichtigste zuerst</div><p>Menschen scannen. Große Überschrift, dann Details.</p></div>
+  <div class="card"><div class="card-title">Barrierefreiheit</div><p>Screenreader lesen HTML vor. Semantik und alt Texte sind die Basis.</p></div>
+  <h3>Wireframes</h3>
+  <p>Vor dem Coden auf Papier planen.</p>
+  <div class="summary"><div class="summary-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Seitenaufbau</div>
+  <svg viewBox="0 0 480 320" style="width:100%;max-width:480px;display:block;margin:0.8rem auto;" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .wf-box{fill:none;stroke:#d2d2d7;stroke-width:1.5;rx:6}
+      .wf-text{font-family:'DM Sans',sans-serif;font-size:13px;fill:#6e6e73}
+      .wf-label{font-family:'JetBrains Mono',monospace;font-size:11px;fill:#0071e3;font-weight:600}
+    </style>
+    <rect x="10" y="10" width="460" height="300" class="wf-box" stroke="#d2d2d7" stroke-dasharray="6,3"/>
+    <rect x="24" y="24" width="432" height="50" class="wf-box"/>
+    <text x="44" y="54" class="wf-label">HEADER</text>
+    <text x="120" y="54" class="wf-text">Logo + Navigation</text>
+    <rect x="24" y="88" width="432" height="150" class="wf-box"/>
+    <text x="44" y="116" class="wf-label">MAIN</text>
+    <rect x="44" y="130" width="240" height="90" class="wf-box" stroke-dasharray="4,2"/>
+    <text x="64" y="165" class="wf-label">ARTICLE</text>
+    <text x="64" y="183" class="wf-text">Hauptinhalt</text>
+    <rect x="300" y="130" width="140" height="90" class="wf-box" stroke-dasharray="4,2"/>
+    <text x="320" y="165" class="wf-label">ASIDE</text>
+    <text x="320" y="183" class="wf-text">Sidebar</text>
+    <rect x="24" y="252" width="432" height="46" class="wf-box"/>
+    <text x="44" y="280" class="wf-label">FOOTER</text>
+    <text x="120" y="280" class="wf-text">Impressum, Links</text>
+  </svg>
+  </div>
+  <div class="tasks"><div class="tasks-header"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Aufgaben</div>
+    <div class="task"><div class="task-row"><span class="task-letter">a</span><span class="task-text">Wireframe auf Papier für eine Hobby Seite.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Zeichne Kästen für Header (mit Logo und Menü), Hauptbereich (mit Text und Bild), eventuell eine Seitenleiste, und einen Footer. Es muss nicht schön sein, nur die Bereiche sollen klar sein.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">b</span><span class="task-text">Semantische Tags zuordnen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Oben = <code>&lt;header&gt;</code>, Menü = <code>&lt;nav&gt;</code>, Mitte = <code>&lt;main&gt;</code>, Textblöcke = <code>&lt;section&gt;</code>, Sidebar = <code>&lt;aside&gt;</code>, Unten = <code>&lt;footer&gt;</code>.</div></details></div>
+    <div class="task"><div class="task-row"><span class="task-letter">c</span><span class="task-text">Drei Webseiten vergleichen.</span></div><details class="solution"><summary>Lösung anzeigen</summary><div class="sol-content">Fast alle Webseiten haben: Navigation oben, Hauptinhalt mittig, Footer unten. Die Navigation enthält meistens 4 bis 8 Punkte. Der Footer hat Impressum und Links. Dieses Muster wiederholt sich überall.</div></details></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="tab-content" id="tab-projekt">
+  <h2 class="section-title">Abschlussaufgabe</h2>
+  <p class="section-subtitle">Zeig, was du gelernt hast</p>
+  <div class="slide"><div class="slide-label">Dein Projekt</div><h4>„Mein Hobby"</h4><p>Baue eine komplette HTML Seite über dein Hobby. Schritt für Schritt.</p></div>
+  <div class="note warn"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg><div class="note-content"><strong>Spielregeln</strong>Nur HTML. Kein CSS, kein JS, kein Copy Paste, keine KI.</div></div>
+  <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Grundgerüst</h4><p><code>hobby.html</code> mit DOCTYPE, html, head (charset, viewport, title), body.</p></div></div>
+  <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Semantische Struktur</h4><p><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> im Body.</p></div></div>
+  <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Header und Navigation</h4><p>h1 mit Hobby. Vier Ankerlinks (#was, #warum, #ausruestung, #kontakt).</p></div></div>
+  <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Was ist dein Hobby?</h4><p><code>&lt;section id="was"&gt;</code>: h2, Absätze, strong/em, Bild mit figure + figcaption.</p></div></div>
+  <div class="step"><div class="step-num">5</div><div class="step-body"><h4>Warum du es magst</h4><p><code>&lt;section id="warum"&gt;</code>: h2, unsortierte Liste (5+ Gründe).</p></div></div>
+  <div class="step"><div class="step-num">6</div><div class="step-body"><h4>Was man braucht</h4><p><code>&lt;section id="ausruestung"&gt;</code>: Tabelle (4+ Zeilen) mit thead/tbody.</p></div></div>
+  <div class="step"><div class="step-num">7</div><div class="step-body"><h4>Kontaktformular</h4><p><code>&lt;section id="kontakt"&gt;</code>: Name, E-Mail, Textarea, Dropdown. Labels, required, Button.</p></div></div>
+  <div class="step"><div class="step-num">8</div><div class="step-body"><h4>Footer</h4><p>Name, &amp;copy; Jahr, externer Link.</p></div></div>
+  <div class="step"><div class="step-num">9</div><div class="step-body"><h4>Testen</h4><p>Ankerlinks, Bild, Titel, Umlaute, Alt Text, F12.</p></div></div>
+  <div class="note tip"><svg class="icon note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div class="note-content"><strong>Bonus</strong>Erstelle eine zweite HTML Datei namens <code>anfaenger-tipps.html</code>, auf der du drei Tipps für Anfänger in deinem Hobby als sortierte Liste aufschreibst. Verlinke beide Seiten gegenseitig in der Navigation, sodass man hin und her springen kann.</div></div>
+  <div class="card" style="margin-top:1.5rem;"><div class="card-title">Bewertungskriterien</div><p>Grundgerüst · Einrückung · Semantik · Alle Elemente · Alt Text · Labels · Ankerlinks · Kein unnötiges div</p></div>
+</section>
+
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
